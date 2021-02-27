@@ -9,5 +9,12 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+sum = 0
+File.open("data/3.txt") do |f|
+  f.each do |line|
+    x = line.split(" ").map { |s| s.to_i }
+    y = x.max - x.min
+    sum += y
+  end
+end
+  puts sum

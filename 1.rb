@@ -15,7 +15,14 @@
 #
 #
 ## Решение:
-
-
-
-
+floor = 0
+File.open("data/1.txt") do |f|
+  f.each_char do |a|
+  if a == "("
+    floor += 1
+  else
+    floor -= 1
+  end
+end
+end
+puts floor

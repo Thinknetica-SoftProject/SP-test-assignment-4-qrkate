@@ -15,5 +15,17 @@
 #
 #
 ## Решение:
-
-
+def g(l, h, w)
+  res = (2*w*l) + (2*l*h) + (2*h*w) + (l*h)
+  return res
+end
+sum = 0
+File.open("data/4.txt") do |f|
+  f.each do |line|
+    x = line.split("x").map { |s| s.to_i }
+    y = x.sort
+    z = g(*y)
+    sum += z
+  end
+end
+  puts sum

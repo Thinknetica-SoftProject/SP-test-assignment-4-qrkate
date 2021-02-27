@@ -15,4 +15,11 @@
 #
 #
 ## Решение:
-
+require 'digest'
+x = gets
+for z in (0..1000000)
+if Digest::MD5.hexdigest(x+z.to_s)[/\A\d{5}/] == "00000"
+  puts z
+  break
+end
+end
